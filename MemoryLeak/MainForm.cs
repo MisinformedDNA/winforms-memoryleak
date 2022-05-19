@@ -1,17 +1,8 @@
-﻿using MemoryLeak;
-using MemoryLeak.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MemoryLeak.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MemoryLeak
 {
@@ -29,13 +20,6 @@ namespace MemoryLeak
 
         protected override async void OnLoad(EventArgs e)
         {
-            //for (int i = 0; i < 0_100_000; i++)
-            //{
-            //    _context.Movies.Add(new Movie { Title = $"Movie{i}" });
-            //}
-
-            //await _context.SaveChangesAsync(GetCancellationToken()).ConfigureAwait(false);
-
             while (true)
             {
                 GC.Collect();
@@ -61,6 +45,16 @@ namespace MemoryLeak
         private void button1_Click(object sender, EventArgs e)
         {
             OpenScopedChildMdiForm<ChildForm>();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 0_100_000; i++)
+            {
+                _context.Movies.Add(new Movie { Title = $"Movie{i}" });
+            }
+
+            await _context.SaveChangesAsync(GetCancellationToken()).ConfigureAwait(false);
         }
     }
 }
