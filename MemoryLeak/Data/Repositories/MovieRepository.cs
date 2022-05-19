@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace RobustWinForms.Data.Repositories
+namespace MemoryLeak.Data.Repositories
 {
     public class MovieRepository
     {
@@ -18,7 +18,7 @@ namespace RobustWinForms.Data.Repositories
         }
 
         public async Task<List<Movie>> Load(CancellationToken cancellationToken)
-{
+        {
             //List<Movie> movies = new();
 
             //for (int i = 0; i < 100_000; i++)

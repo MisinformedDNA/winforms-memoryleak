@@ -1,12 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RobustWinForms.Data;
-using RobustWinForms.Data.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using MemoryLeak.Data.Repositories;
 
-namespace WinFormsApp2
+namespace MemoryLeak
 {
     public partial class ChildForm : BaseForm
     {
@@ -18,7 +16,7 @@ namespace WinFormsApp2
             InitializeComponent();
             //_context = context;
             Load += ChildForm_Load;
-//            Shown += (_, _) => Close();
+            //            Shown += (_, _) => Close();
             _repository = repository;
         }
 
@@ -31,9 +29,9 @@ namespace WinFormsApp2
 
         private async void ChildForm_Load(object? sender, EventArgs e)
         {
-//            await ExecuteAsync(async () => await Task.Delay(1000, GetCancellationToken()));
+            //            await ExecuteAsync(async () => await Task.Delay(1000, GetCancellationToken()));
             //await ExecuteAsync(async () => await OnLoadInternalAsync(GetCancellationToken()));
-//            Thread.Sleep(1000);
+            //            Thread.Sleep(1000);
         }
 
         private async Task OnLoadInternalAsync(CancellationToken cancellationToken)

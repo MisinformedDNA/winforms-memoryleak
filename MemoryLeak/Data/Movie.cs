@@ -1,4 +1,4 @@
-﻿namespace RobustWinForms.Data
+﻿namespace MemoryLeak.Data
 {
     public class Movie
     {

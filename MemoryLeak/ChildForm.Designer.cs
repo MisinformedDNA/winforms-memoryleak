@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp2
+﻿namespace MemoryLeak
 {
-    partial class BaseForm
+    partial class ChildForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ChildForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "BaseForm";
+            this.ClientSize = new System.Drawing.Size(235, 78);
+            this.Name = "ChildForm";
+            this.Text = "ChildForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

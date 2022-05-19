@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MemoryLeak;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RobustWinForms.Data
+namespace MemoryLeak.Data
 {
     public partial class MyAppContext : DbContext
     {
@@ -17,7 +18,7 @@ namespace RobustWinForms.Data
         //    _userFacilities = userProvider.GetFacilityIds();
         //}
 
-        public MyAppContext(DbContextOptions<MyAppContext> options, UserProvider userProvider) 
+        public MyAppContext(DbContextOptions<MyAppContext> options, UserProvider userProvider)
             : base(options)
         {
         }

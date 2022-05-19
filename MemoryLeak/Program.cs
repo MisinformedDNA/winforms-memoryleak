@@ -1,13 +1,12 @@
+﻿using MemoryLeak.Data;
+using MemoryLeak.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RobustWinForms;
-using RobustWinForms.Data;
-using RobustWinForms.Data.Repositories;
 using System;
 using System.Windows.Forms;
 
-namespace WinFormsApp2
+namespace MemoryLeak
 {
     internal static class Program
     {
