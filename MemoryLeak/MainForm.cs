@@ -20,6 +20,8 @@ namespace MemoryLeak
 
         protected override async void OnLoad(EventArgs e)
         {
+            await _context.Database.EnsureCreatedAsync();
+
             while (true)
             {
                 GC.Collect();
@@ -49,12 +51,16 @@ namespace MemoryLeak
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            button2.Enabled = false;
+
             for (int i = 0; i < 0_100_000; i++)
             {
                 _context.Movies.Add(new Movie { Title = $"Movie{i}" });
             }
 
             await _context.SaveChangesAsync(GetCancellationToken()).ConfigureAwait(false);
+
+            button2.Enabled = true;
         }
     }
 }

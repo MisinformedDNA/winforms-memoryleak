@@ -19,7 +19,7 @@ namespace MemoryLeak
                     services
                         .AddTransient<MainForm>()
                         .AddTransient<ChildForm>()
-                        .AddDbContext<MyAppContext>(o => o.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=RobustWinForms"), ServiceLifetime.Transient)
+                        .AddDbContext<MyAppContext>(o => o.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=WinformsMemoryLeak"), ServiceLifetime.Transient)
                         .AddTransient<MovieRepository>();
                 });
             var host = builder.Build();
