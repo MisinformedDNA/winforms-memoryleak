@@ -53,7 +53,7 @@ namespace MemoryLeak
         {
             button2.Enabled = false;
 
-            for (int i = 0; i < 0_100_000; i++)
+            for (int i = 0; i < 0_200_000; i++)
             {
                 _context.Movies.Add(new Movie { Title = $"Movie{i}" });
             }
